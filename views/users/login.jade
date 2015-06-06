@@ -1,0 +1,39 @@
+doctype html
+html
+	head
+		title Đăng nhập
+		include ../partials/template/head.jade
+	body.login
+		.container
+			#login-zone.login-box.col-lg-4.col-lg-offset-4.col-sm-6.col-sm-offset-3
+					.header
+						h1 Xin chào
+					// Login form
+					form(accept-charset='UTF-8', action='/users/login', method='post')
+						fieldset
+							.form-group.first
+								.input-group.col-sm-12
+									span.input-group-addon
+										i.fa.fa-user
+									input#username.form-control.input-lg(tabindex='1', type='text', placeholder='Tài khoản', name='username', required)
+							.form-group.last
+								.input-group.col-sm-12
+									span.input-group-addon
+										i.fa.fa-key
+									input#password.form-control.input-lg(tabindex='2', type='password', placeholder='Mật khẩu', name='password', required)
+							.form-group
+								.input-group.col-sm-12
+									.checkbox
+										label(for='rememberMe')
+											input#rememberMe(tabindex='3', type='checkbox', name='rememberMe')
+											| Nhớ tài khoản
+							button.btn.btn-primary.col-xs-12(tabindex='4', type='submit') Đăng nhập
+							p.small.text-center
+								a(href="/users/create") Tạo tài khoản
+							- if (error)
+								br 
+								div(style='color:red') #{error}
+
+		script(src='/js/jquery-2.1.1.min.js')
+		script(src='/js/jquery.backstretch.min.js')
+		script(src='/js/login.js')

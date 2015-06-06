@@ -1,0 +1,21 @@
+body.login
+	    .container
+	      	.login-box.col-lg-4.col-lg-offset-4.col-sm-6
+	        	.column.input-field
+	          		.header
+	            		h1
+	              			| Xin chào
+			          	// Login form
+		          	form(accept-charset='UTF-8', action='/users/login', method='post')
+		            	.form-group.first
+		              		.input-group.col-sm-12
+		                		span.input-group-addon
+		                  			i.fa.fa-user
+		                		input#email.form-control.input-lg(tabindex='1', type='text', placeholder='Tài khoản hoặc email', name='email', require='')
+			            .form-group.last
+			              	.input-group.col-sm-12
+			                	span.input-group-addon
+			                  		i.fa.fa-key
+			                input#password.form-control(tabindex='2', placeholder='Mật khẩu', type='password', name='password', require='')
+			            .form-group
+			              	button.btn.btn-primary.col-xs-12(tabindex='3', type='submit') Đăng nhập

@@ -1,0 +1,440 @@
+.navbar(role='navigation')
+  .container-fluid
+    ul.nav.navbar-nav.navbar-actions.navbar-left
+      li.visible-md.visible-lg
+        a#main-menu-toggle(href='#')
+          i.fa.fa-bars
+      li.visible-xs.visible-sm
+        a#sidebar-menu(href='#')
+          i.fa.fa-bars
+    form.navbar-form.navbar-left
+      i.fa.fa-search
+      input.form-control(type='text', placeholder='Tìm kiếm...')
+    ul.nav.navbar-nav.navbar-right
+      li.dropdown.visible-md.visible-lg
+        a.dropdown-toggle(href='#', data-toggle='dropdown')
+          i.fa.fa-comments-o
+          span.badge 4
+        ul.dropdown-menu
+          li.dropdown-menu-header
+            strong Messages
+            .progress.thin
+              .progress-bar.progress-bar-success(role='progressbar', aria-valuenow='40', aria-valuemin='0', aria-valuemax='100', style='width: 40%')
+                span.sr-only 40% Complete (success)
+          li.avatar
+            a(href='#')
+              img.avatar(src='../img/avatar.jpg')
+              div New message
+              small 1 minute ago
+              span.label.label-info NEW
+          li.avatar
+            a(href='#')
+              img.avatar(src='../img/avatar.jpg')
+              div New message
+              small 1 minute ago
+              span.label.label-info NEW
+          li.avatar
+            a(href='#')
+              img.avatar(src='../img/avatar.jpg')
+              div New message
+              small 1 minute ago
+          li.avatar
+            a(href='#')
+              img.avatar(src='../img/avatar.jpg')
+              div New message
+              small 1 minute ago
+          li.avatar
+            a(href='#')
+              img.avatar(src='../img/avatar.jpg')
+              div New message
+              small 1 minute ago
+          li.avatar
+            a(href='#')
+              img.avatar(src='../img/avatar.jpg')
+              div New message
+              small 1 minute ago
+          li.dropdown-menu-footer.text-center
+            a(href='#') View all messages
+      li
+        a(href='#')
+          i.fa.fa-cog
+      li.dropdown.visible-md.visible-lg
+        a.dropdown-toggle(href='#', data-toggle='dropdown')
+          i.fa.fa-wrench
+          span.badge !
+        ul.dropdown-menu
+          li.dropdown-menu-header.text-center
+            strong Account
+          li
+            a(href='#')
+              i.fa.fa-bell-o
+              |  Updates 
+              span.label.label-info 42
+          li
+            a(href='#')
+              i.fa.fa-envelope-o
+              |  Messages 
+              span.label.label-success 42
+          li
+            a(href='#')
+              i.fa.fa-tasks
+              |  Tasks 
+              span.label.label-danger 42
+          li
+            a(href='#')
+              i.fa.fa-comments
+              |  Comments 
+              span.label.label-warning 42
+          li.dropdown-menu-header.text-center
+            strong Settings
+          li
+            a(href='#')
+              i.fa.fa-user
+              |  Profile
+          li
+            a(href='#')
+              i.fa.fa-wrench
+              |  Settings
+          li
+            a(href='#')
+              i.fa.fa-usd
+              |  Payments 
+              span.label.label-default 42
+          li
+            a(href='#')
+              i.fa.fa-file
+              |  Projects 
+              span.label.label-primary 42
+          li.divider
+          li
+            a(href='#')
+              i.fa.fa-shield
+              |  Lock Profile
+          li
+            a(href='#')
+              i.fa.fa-lock
+              |  Logout
+      
+      - if (user) {
+        li
+          a(href="#") #{user.username}
+        li
+          a(href='users/logout') Đăng xuất
+      - } else {
+        li
+          a(href='users/login') Đăng nhập
+      - }
+    //- end: Header
+
+
+// start: Main Menu
+.sidebar
+  .sidebar-collapse
+    .sidebar-header
+      //- img(src='../img/avatar.jpg')
+      - if(user)
+        h2 #{user.fullname}
+        h3 #{user.email}
+      .user-menu
+        a#sidebar-minify(href='#')
+          i.fa.fa-ellipsis-v
+    .sidebar-menu
+      ul.nav.nav-sidebar
+        li
+          a(href='/api/contacts')
+            i.fa.fa-child
+            span.text  API Liên hệ
+        li
+          a(href='/vnt#/lienhe')
+            i.fa.fa-child
+            span.text  Liên hệ
+        li
+          a(href='/product')
+            i.fa.fa-laptop
+            span.text  Product
+        li
+          a(href='index.html')
+            i.fa.fa-bar-chart-o
+            span.text
+              | Dashboard 
+              span.label.label-info NEW
+        li
+          a(href='#')
+            i.fa.fa-eye
+            span.text  UI Features
+            span.indicator
+          ul
+            li
+              a(href='ui-sliders-progress.html')
+                i.fa.fa-eye
+                span.text  Sliders
+            li
+              a(href='ui-nestable-list.html')
+                i.fa.fa-eye
+                span.text  Nestable Lists
+            li
+              a(href='ui-elements.html')
+                i.fa.fa-eye
+                span.text  Elements
+            li
+              a(href='ui-panels.html')
+                i.fa.fa-eye
+                span.text
+                  | Panels 
+                  span.label.label-info NEW
+            li
+              a(href='ui-buttons.html')
+                i.fa.fa-eye
+                span.text
+                  | Buttons 
+                  span.label.label-warning NEW
+            li
+              a(href='ui-modals.html')
+                i.fa.fa-eye
+                span.text
+                  | Modals 
+                  span.label.label-info NEW
+            li
+              a(href='ui-notifications.html')
+                i.fa.fa-eye
+                span.text
+                  | Notifications 
+                  span.label.label-info NEW
+        li
+          a(href='widgets.html')
+            i.fa.fa-dashboard
+            span.text  Widgets
+        li
+          a(href='#')
+            i.fa.fa-folder-o
+            span.text  Example Pages
+            span.indicator
+          ul
+            li
+              a(href='page-activity.html')
+                i.fa.fa-dot-circle-o
+                span.text  Activity
+            li
+              a(href='#')
+                i.fa.fa-envelope
+                span.text  Mail
+                span.indicator
+              ul
+                li
+                  a(href='page-inbox.html')
+                    i.fa.fa-envelope
+                    span.text  Inbox View
+                li
+                  a(href='page-inbox-message.html')
+                    i.fa.fa-envelope
+                    span.text  Message View
+                li
+                  a(href='page-inbox-compose.html')
+                    i.fa.fa-envelope
+                    span.text  Compose
+            li
+              a(href='page-invoice.html')
+                i.fa.fa-file-text
+                span.text  Invoice
+            li
+              a(href='page-todo.html')
+                i.fa.fa-tasks
+                span.text  ToDo & Timeline
+            li
+              a(href='page-profile.html')
+                i.fa.fa-male
+                span.text  Profile
+            li
+              a(href='page-pricing-tables.html')
+                i.fa.fa-table
+                span.text  Pricing Tables
+            li
+              a(href='page-404.html')
+                i.fa.fa-unlink
+                span.text  404
+            li
+              a(href='page-500.html')
+                i.fa.fa-unlink
+                span.text  500
+            li
+              a(href='page-lockscreen.html')
+                i.fa.fa-lock
+                span.text  LockScreen
+            li
+              a(href='page-lockscreen2.html')
+                i.fa.fa-lock
+                span.text  LockScreen2
+            li
+              a(href='page-login.html')
+                i.fa.fa-key
+                span.text
+                  | Login 
+                  span.label.label-danger NEW
+            li
+              a(href='page-register.html')
+                i.fa.fa-sign-in
+                span.text
+                  | Register 
+                  span.label.label-success NEW
+            li
+              a(href='page-login2.html')
+                i.fa.fa-key
+                span.text
+                  | Login Alt 
+                  span.label.label-danger NEW
+            li
+              a(href='page-register2.html')
+                i.fa.fa-sign-in
+                span.text
+                  | Register Alt 
+                  span.label.label-success NEW
+        li
+          a(href='#')
+            i.fa.fa-edit
+            span.text  Forms
+            span.indicator
+          ul
+            li
+              a(href='form-elements.html')
+                i.fa.fa-edit
+                span.text  Form elements
+            li
+              a(href='form-wizard.html')
+                i.fa.fa-edit
+                span.text  Wizard
+            li
+              a(href='')
+                i.fa.fa-edit
+                span.text  Dropzone Upload
+            li
+              a(href='form-x-editable.html')
+                i.fa.fa-edit
+                span.text  X-editable
+        li
+          a(href='#')
+            i.fa.fa-list-alt
+            span.text  Charts
+            span.indicator
+          ul
+            li
+              a(href='charts-flot.html')
+                i.fa.fa-chevron-right
+                span.text  Flot Charts
+            li
+              a(href='charts-xcharts.html')
+                i.fa.fa-chevron-right
+                span.text  xCharts
+            li
+              a(href='charts-others.html')
+                i.fa.fa-chevron-right
+                span.text  Other
+        li
+          a(href='typography.html')
+            i.fa.fa-font
+            span.text  Typography
+        li
+          a(href='gallery.html')
+            i.fa.fa-picture-o
+            span.text  Gallery
+        li
+          a(href='table.html')
+            i.fa.fa-align-justify
+            span.text  Tables
+        li
+          a(href='calendar.html')
+            i.fa.fa-calendar
+            span.text  Calendar
+        li
+          a(href='#')
+            i.fa.fa-star
+            span.text  Icons
+            span.indicator
+          ul
+            li
+              a(href='icons-halflings.html')
+                i.fa.fa-star
+                span.text  Halflings
+            li
+              a(href='icons-glyphicons-pro.html')
+                i.fa.fa-star
+                span.text  Glyphicons PRO
+            li
+              a(href='icons-filetypes.html')
+                i.fa.fa-star
+                span.text  Filetypes
+            li
+              a(href='icons-social.html')
+                i.fa.fa-star
+                span.text  Social
+            li
+              a(href='icons-font-awesome.html')
+                i.fa.fa-star
+                span.text  Font Awesome
+            li
+              a(href='icons-climacons.html')
+                i.fa.fa-star
+                span.text  Climacons
+        li
+          a(href='#')
+            i.fa.fa-folder-open
+            span.text  4 Level Menu
+            span.indicator
+          ul
+            li
+              a(href='')
+                i.fa.fa-folder
+                span.text  2nd Level
+            li
+              a(href='#')
+                i.fa.fa-folder-open
+                span.text  2nd Level
+                span.indicator
+              ul
+                li
+                  a(href='3rd-level.html')
+                    i.fa.fa-folder
+                    span.text  3rd Level
+                li
+                  a(href='#')
+                    i.fa.fa-folder-open
+                    span.text  3rd Level
+                    span.indicator
+                  ul
+                    li
+                      a(href='4th-level.html')
+                        i.fa.fa-folder
+                        span.text  4th Level
+                li
+                  a(href='#')
+                    i.fa.fa-folder-open
+                    span.text  3rd Level
+                    span.indicator
+                  ul
+                    li
+                      a(href='4th-level2.html')
+                        i.fa.fa-folder
+                        span.text  4th Level
+  .sidebar-footer
+    ul.sidebar-footer-menu
+      li
+        a(href='#')
+          i.fa.fa-cog
+          |  Settings
+      li
+        #username
+          if username
+            h2 username
+        a(href='#')
+          i.fa.fa-sign-out
+          |  Logout
+    .sidebar-brand
+      | origin
+    ul.sidebar-terms
+      li
+        a(href='#') Terms
+      li
+        a(href='#') Privacy
+      li
+        a(href='#') Help
+      li
+        a(href='#') About

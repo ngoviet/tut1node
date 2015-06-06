@@ -1,0 +1,1 @@
+mongod --nojournal --dbpath=data/db --logpath=data/log/mongod.log

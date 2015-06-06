@@ -1,0 +1,15 @@
+doctype html
+html(ng-app="ui.bootstrap.demo")
+  head
+    title Product
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js')
+    script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular.js')
+    script(src='/bower/angular-bootstrap/ui-bootstrap-tpls.min.js')
+    script(src='/js/app/product/products.js')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css')
+body
+  .container
+    .main
+      div(ng-view)
+  
