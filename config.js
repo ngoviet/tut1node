@@ -4,14 +4,6 @@ var config = {};
 	config.cookieMaxAge = 30*24*3600*1000;
 	config.secret = 'ilovescotchyscotch';
 
-	// config.mssqlvnpt = {
-	// 	user: 'sa',
-	// 	password: 'tSnMkC.ncsx@04)!20!#',
-	// 	server: '10.35.8.153\\sqlserver2008',
-	// 	database: 'VNPT-Tracking'
-	// }
-
-
 	config.mssqlvnpt = {
 		user: 'sa',
 		password: '1111',
