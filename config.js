@@ -19,6 +19,18 @@ var config = {};
 		database: 'VNPT-Tracking'
 	}
 
+	config.sms247 = {
+		uri: 'http://7.59.6.251:8080',
+		sendSms: 'send-message',
+		statusSms: 'request-status-update',
+		removeQueue: 'remove-queued-message',
+		statusServer: 'request-server-status',
+		getSms: 'request-received-messages',
+		username:'admin',
+		password:'3232'
+	}
+
+
 	/**
 	 * Normalize a port into a number, string, or false.
 	 */
