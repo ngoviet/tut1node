@@ -34,7 +34,7 @@ var config = {};
 	/**
 	 * Normalize a port into a number, string, or false.
 	 */
-	config.port = normalizePort(process.env.PORT || '3333');
+	config.port = normalizePort(process.env.PORT || '3000');
 
 	function normalizePort(val) {
 	  var port = parseInt(val, 10);

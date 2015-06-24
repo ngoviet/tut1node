@@ -21,7 +21,8 @@ router.get('/setup', function(req, res, next){
 		email: 'ngoducvietds@gmail.com',
 		password: '1111',
 	});
-
+	admin.usernameLower	= admin.username.toLowerCase();
+	admin.email 		= admin.email.toLowerCase();
 	admin.save(function(err){
 		if(err) { return(next(err)); }
 
@@ -33,38 +34,25 @@ router.get('/setup', function(req, res, next){
 
 
 router.get('/sendsms', function(req, res, next){
-	// var options = {
-	// 	hostname: 'http://7.59.6.251',
-	// 	port: 8080,
-	// 	path: '/http/' + sms247.sendSms,
-	// 	method: 'GET'
-	// };
-	// console.log(options.path);
-	// var request = http.request(options, function(res){
-	// 	res.on('data', function(chunk){
 
-	// 	});
-	// });
-
-	// request.on('error', function(e){
-	// 	console.log(e.message);
-	// });
-
-	// request.end();
 	var options = {
-		hostname: 'http://7.59.6.251',
+		hostname: 'http://10.35.20.201',
 		port: 8080,
-		// path: '/http/send-message?username=admin&password=3232&to=0919278012&message=HTTP',
+		path: '/http/request-received-messages?username=admin&password=3232',
 		method: 'GET'
 		
 	};
 	console.log('path: ' + options.path);
-	http.request(options, function(res){
+	var callback = function(res){
 		res.setEncoding('utf8');
 		res.on('data', function(chunk){
 			console.log(chunk);
 		});
-	}).end();
+	};
+
+	var req = http.request(options, callback);
+	req.write('Hello world!');
+	req.end();
 });
 
 // URL not need authenticate
